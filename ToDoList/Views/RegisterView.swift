@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct RegisterView: View {
+    
+    @StateObject var viewModel = RegisterViewViewModel()
+    
     var body: some View {
         HeaderView(
             title: "Register",
@@ -15,33 +18,29 @@ struct RegisterView: View {
             angle: -15,
             background: Color.orange
         )
-        FormView()
+        
+        form
+        
         Spacer()
     }
-}
-
-private struct FormView: View {
     
-    @State var fullName = ""
-    @State var email = ""
-    @State var password = ""
-
-    var body: some View {
+    @ViewBuilder
+    var form: some View {
         Form {
-            TextField("Full name", text: $fullName)
+            TextField("Full name", text: $viewModel.fullName)
                 .textFieldStyle(DefaultTextFieldStyle())
                 .autocorrectionDisabled()
-            TextField("Email address", text: $email)
+            TextField("Email address", text: $viewModel.email)
                 .textFieldStyle(DefaultTextFieldStyle())
                 .autocapitalization(.none)
                 .autocorrectionDisabled()
-            SecureField("Password", text: $password)
+            SecureField("Password", text: $viewModel.password)
                 .textFieldStyle(DefaultTextFieldStyle())
             CustomButton(
                 text: "Create account",
                 background: .green
             ) {
-                
+                viewModel.register()
             }
             .padding()
         }
