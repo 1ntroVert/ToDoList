@@ -34,6 +34,7 @@
 		73C70C102B48386B00FE572A /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C70C0F2B48386B00FE572A /* CustomButton.swift */; };
 		73C70C122B49246700FE572A /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C70C112B49246700FE572A /* Extensions.swift */; };
 		73C70C142B4A876000FE572A /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 73C70C132B4A876000FE572A /* Launch Screen.storyboard */; };
+		73C70C202B4A979300FE572A /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C70C1F2B4A979300FE572A /* AuthService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +63,7 @@
 		73C70C0F2B48386B00FE572A /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		73C70C112B49246700FE572A /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		73C70C132B4A876000FE572A /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		73C70C1F2B4A979300FE572A /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +138,7 @@
 				73C70C1C2B4A908800FE572A /* Views */,
 				73C70C1E2B4A926200FE572A /* Models */,
 				73C70C112B49246700FE572A /* Extensions.swift */,
+				73C70C1F2B4A979300FE572A /* AuthService.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -299,6 +302,7 @@
 				73C70C082B47E8EA00FE572A /* RegisterViewModel.swift in Sources */,
 				73C70BFE2B47E86D00FE572A /* MainViewModel.swift in Sources */,
 				73C70C102B48386B00FE572A /* CustomButton.swift in Sources */,
+				73C70C202B4A979300FE572A /* AuthService.swift in Sources */,
 				73C70BF82B47E61800FE572A /* ToDoListView.swift in Sources */,
 				73C70BF02B47E5A200FE572A /* ToDoListItemView.swift in Sources */,
 				73C70C002B47E88200FE572A /* ProfileViewModel.swift in Sources */,

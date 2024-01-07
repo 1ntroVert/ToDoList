@@ -5,18 +5,19 @@
 //  Created by a.shlauzer on 05.01.2024.
 //
 
-import FirebaseAuth
 import FirebaseFirestore
 import Foundation
 
 class ProfileViewModel: ObservableObject {
     
+    private let authService = AuthService()
+
     @Published var user: User? = nil
     
     init() {}
     
     func fetchUser() {
-        guard let userId = Auth.auth().currentUser?.uid else {
+        guard let userId = authService.currentUserId else {
             return
         }
         
@@ -37,10 +38,6 @@ class ProfileViewModel: ObservableObject {
     }
     
     func logOut() {
-        do {
-            try Auth.auth().signOut()
-        } catch {
-            print(error)
-        }
+        authService.logOut()
     }
 }

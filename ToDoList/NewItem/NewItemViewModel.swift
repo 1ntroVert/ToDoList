@@ -5,11 +5,12 @@
 //  Created by a.shlauzer on 05.01.2024.
 //
 
-import FirebaseAuth
 import FirebaseFirestore
 import Foundation
 
 class NewItemViewModel: ObservableObject {
+    
+    private let authService = AuthService()
     
     @Published var title = ""
     @Published var dueDate = Date()
@@ -22,7 +23,7 @@ class NewItemViewModel: ObservableObject {
             return
         }
         
-        guard let currentUserId = Auth.auth().currentUser?.uid else {
+        guard let currentUserId = authService.currentUserId else {
             return
         }
         

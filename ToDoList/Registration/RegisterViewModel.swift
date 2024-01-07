@@ -6,10 +6,11 @@
 //
 
 import Foundation
-import FirebaseAuth
 import FirebaseFirestore
 
 class RegisterViewModel: ObservableObject {
+    
+    private let authService = AuthService()
     
     @Published var fullName = ""
     @Published var email = ""
@@ -21,12 +22,8 @@ class RegisterViewModel: ObservableObject {
         guard validate() else {
             return
         }
-        
-        Auth.auth().createUser(withEmail: email, password: password) { result, error in
-            guard let userId = result?.user.uid else {
-                return
-            }
-            
+
+        authService.createUser(email: email, password: password) { userId in
             self.insertUserRecord(id: userId)
         }
     }

@@ -5,10 +5,11 @@
 //  Created by a.shlauzer on 05.01.2024.
 //
 
-import FirebaseAuth
 import Foundation
 
 class LoginViewModel: ObservableObject {
+    
+    private let authService = AuthService()
     
     @Published var email = ""
     @Published var password = ""
@@ -21,7 +22,7 @@ class LoginViewModel: ObservableObject {
             return
         }
         
-        Auth.auth().signIn(withEmail: email, password: password)
+        authService.logIn(email: email, password: password)
     }
     
     private func validate() -> Bool {
