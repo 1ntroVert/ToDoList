@@ -1,5 +1,5 @@
 //
-//  ProfileViewViewModel.swift
+//  ProfileViewModel.swift
 //  ToDoList
 //
 //  Created by a.shlauzer on 05.01.2024.
@@ -9,7 +9,7 @@ import FirebaseAuth
 import FirebaseFirestore
 import Foundation
 
-class ProfileViewViewModel: ObservableObject {
+class ProfileViewModel: ObservableObject {
     
     @Published var user: User? = nil
     

@@ -1,5 +1,5 @@
 //
-//  RegisterViewViewModel.swift
+//  RegisterViewModel.swift
 //  ToDoList
 //
 //  Created by a.shlauzer on 05.01.2024.
@@ -9,7 +9,7 @@ import Foundation
 import FirebaseAuth
 import FirebaseFirestore
 
-class RegisterViewViewModel: ObservableObject {
+class RegisterViewModel: ObservableObject {
     
     @Published var fullName = ""
     @Published var email = ""

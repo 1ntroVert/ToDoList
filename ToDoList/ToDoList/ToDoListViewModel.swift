@@ -1,5 +1,5 @@
 //
-//  ToDoListViewViewModel.swift
+//  ToDoListViewModel.swift
 //  ToDoList
 //
 //  Created by a.shlauzer on 05.01.2024.
@@ -8,7 +8,7 @@
 import FirebaseFirestore
 import Foundation
 
-class ToDoListViewViewModel: ObservableObject {
+class ToDoListViewModel: ObservableObject {
     
     @Published var showNewItemView = false
     

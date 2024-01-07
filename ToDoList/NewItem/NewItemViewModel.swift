@@ -1,5 +1,5 @@
 //
-//  NewItemViewViewModel.swift
+//  NewItemViewModel.swift
 //  ToDoList
 //
 //  Created by a.shlauzer on 05.01.2024.
@@ -9,7 +9,7 @@ import FirebaseAuth
 import FirebaseFirestore
 import Foundation
 
-class NewItemViewViewModel: ObservableObject {
+class NewItemViewModel: ObservableObject {
     
     @Published var title = ""
     @Published var dueDate = Date()

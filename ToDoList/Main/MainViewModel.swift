@@ -1,5 +1,5 @@
 //
-//  MainViewViewModel.swift
+//  MainViewModel.swift
 //  ToDoList
 //
 //  Created by a.shlauzer on 05.01.2024.
@@ -8,7 +8,7 @@
 import Foundation
 import FirebaseAuth
 
-class MainViewViewModel: ObservableObject {
+class MainViewModel: ObservableObject {
     
     @Published var currentUserId: String = ""
     private var handler: AuthStateDidChangeListenerHandle?

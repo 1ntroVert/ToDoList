@@ -9,7 +9,7 @@ import SwiftUI
 
 struct RegisterView: View {
     
-    @StateObject var viewModel = RegisterViewViewModel()
+    @StateObject var viewModel = RegisterViewModel()
     
     var body: some View {
         HeaderView(
