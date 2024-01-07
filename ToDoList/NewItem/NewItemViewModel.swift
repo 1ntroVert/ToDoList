@@ -5,12 +5,12 @@
 //  Created by a.shlauzer on 05.01.2024.
 //
 
-import FirebaseFirestore
 import Foundation
 
 class NewItemViewModel: ObservableObject {
     
     private let authService = AuthService()
+    private let storeService = StoreService()
     
     @Published var title = ""
     @Published var dueDate = Date()
@@ -27,20 +27,7 @@ class NewItemViewModel: ObservableObject {
             return
         }
         
-        let newId = UUID().uuidString
-        let newItem = ToDoListItem(id: newId,
-                                   title: title,
-                                   dueDate: dueDate.timeIntervalSince1970,
-                                   createdDate: Date().timeIntervalSince1970,
-                                   isDone: false)
-        
-        let db = Firestore.firestore()
-        
-        db.collection("users")
-            .document(currentUserId)
-            .collection("todos")
-            .document(newId)
-            .setData(newItem.asDicrionary())
+        storeService.addToDo(userId: currentUserId, title: title, dueDate: dueDate)
     }
     
     var canSave: Bool {

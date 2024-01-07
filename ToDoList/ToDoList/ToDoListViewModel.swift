@@ -5,10 +5,11 @@
 //  Created by a.shlauzer on 05.01.2024.
 //
 
-import FirebaseFirestore
 import Foundation
 
 class ToDoListViewModel: ObservableObject {
+    
+    private let storeService = StoreService()
     
     @Published var showNewItemView = false
     
@@ -19,12 +20,6 @@ class ToDoListViewModel: ObservableObject {
     }
     
     func delete(id: String) {
-        let db = Firestore.firestore()
-        
-        db.collection("users")
-            .document(userId)
-            .collection("todos")
-            .document(id)
-            .delete()
+        storeService.deleteToDo(userId: userId, id: id)
     }
 }

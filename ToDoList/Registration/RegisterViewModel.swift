@@ -6,11 +6,11 @@
 //
 
 import Foundation
-import FirebaseFirestore
 
 class RegisterViewModel: ObservableObject {
     
     private let authService = AuthService()
+    private let storeService = StoreService()
     
     @Published var fullName = ""
     @Published var email = ""
@@ -24,21 +24,8 @@ class RegisterViewModel: ObservableObject {
         }
 
         authService.createUser(email: email, password: password) { userId in
-            self.insertUserRecord(id: userId)
+            self.storeService.addNewUser(id: userId, name: self.fullName, email: self.email)
         }
-    }
-    
-    private func insertUserRecord(id: String) {
-        let newUser = User(id: id,
-                           name: fullName,
-                           email: email,
-                           joined: Date().timeIntervalSince1970)
-        
-        let db = Firestore.firestore()
-        
-        db.collection("users")
-            .document(id)
-            .setData(newUser.asDicrionary())
     }
     
     private func validate() -> Bool {

@@ -5,12 +5,12 @@
 //  Created by a.shlauzer on 05.01.2024.
 //
 
-import FirebaseFirestore
 import Foundation
 
 class ToDoListItemViewModel: ObservableObject {
     
     private let authService = AuthService()
+    private let storeService = StoreService()
     
     init() {}
     
@@ -22,11 +22,6 @@ class ToDoListItemViewModel: ObservableObject {
             return
         }
         
-        let db = Firestore.firestore()
-        db.collection("users")
-            .document(userId)
-            .collection("todos")
-            .document(itemCopy.id)
-            .setData(itemCopy.asDicrionary())
+        storeService.updateTodo(userId: userId, itemCopy: itemCopy)
     }
 }
